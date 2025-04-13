@@ -3,11 +3,17 @@ import Login from './components/Auth/Login'
 import EmployeeDashboard from './components/Dashboard/EmployeeDashboard'
 import AdminDashboard from './components/Dashboard/AdminDashboard'
 import { useContext } from 'react'
+import { AuthContext } from './context/AuthProvider'
 
 
 function App() {
 
   const[user,setUser]=useState(null);
+
+  const dataContext = useContext(AuthContext);
+  console.log(dataContext);
+
+  
 
   function handleLogin(email,password){
     if(email==="Admin@m.com" && password==="123"){
