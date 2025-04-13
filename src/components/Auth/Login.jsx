@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { MdOutlineEmail } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
 
-const Login = () => {
+const Login = ({handleLogin}) => {
 
     const [email,setEmail]=useState('');
     const [password,setPassword]=useState('');
@@ -10,14 +10,16 @@ const Login = () => {
 
     function submitHandler(e){
         e.preventDefault();
-        console.log("submit");
+        // console.log("submit");
 
         if(email==='' || password===''){
             setRememberMe(false);
             return;
         }
         const data={email,password};
-        console.log(data);
+
+
+        handleLogin(data.email,data.password);
 
         setEmail('');
         setPassword('');
