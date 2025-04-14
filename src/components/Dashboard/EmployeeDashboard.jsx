@@ -3,10 +3,12 @@ import Header from '../others/Header'
 import TaskListNumbers from '../others/TaskListNumbers'
 import TaskList from '../TaskList/TaskList'
 
-const EmployeeDashboard = () => {
+const EmployeeDashboard = ({data,logoutHandler}) => {
+
+  console.log(data);
   return (
     <div className='w-full h-screen bg-[#1f1f1f]  text-white p-10'>
-      <Header/>
+      <Header name={data?.name} logoutHandler={logoutHandler}/>
       <TaskListNumbers/>
       <TaskList/>
     </div>
