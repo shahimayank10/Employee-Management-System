@@ -12,7 +12,7 @@ const AuthProvider = ({children}) => {
     useEffect(() => {
         const data = getLocalStorage();
         setData(data);
-    }, [])
+    },[])
 
   return (
     <div>
