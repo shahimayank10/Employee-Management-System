@@ -2,8 +2,7 @@ import React from 'react'
 
 const TaskListNumbers = ({data}) => {
 
-  console.log(data);
-  return (
+   return (
    <div className='mt-10 py-3  flex gap-4 items-center flex-nowrap'>
      <div className=' w-[45%] bg-blue-400 rounded-xl p-4'>
       <h3 className='font-bold text-4xl'>{data?.taskCount?.newTask}</h3>
