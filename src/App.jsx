@@ -63,7 +63,7 @@ function App() {
   return (
     <>
      {!user ? <Login handleLogin={handleLogin}/> : ""}
-     {user==="admin" &&  <AdminDashboard logoutHandler={logoutHandler} name={ AuthData.admin[0].name}/>}
+     {user==="admin" &&  <AdminDashboard logoutHandler={logoutHandler} name={ AuthData.admin[0].name} data={AuthData.employees}/>}
      {user==="employee" && <EmployeeDashboard data={loggedInUserData} logoutHandler={logoutHandler}/> }
  
     </>

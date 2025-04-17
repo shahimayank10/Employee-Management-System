@@ -1,37 +1,36 @@
 import React from 'react'
 
-const AllTask = () => {
+const AllTask = ({data}) => {
   return (
-    <div className='h-[30%] w-full mt-10 p-5 bg-zinc-600 overflow-y-auto rounded'>
-        <div className='bg-red-400 flex justify-between items-center px-4 py-3 rounded'>
-            <h2>Mayank</h2>
-            <h3>Make a Ui</h3>
-            <h5>status</h5>
-        </div>
-        <div className='bg-blue-400 flex justify-between items-center px-4 py-3 rounded mt-4'>
-            <h2>Mayank</h2>
-            <h3>Make a Ui</h3>
-            <h5>status</h5>
-        </div>
+<div>
 
-        <div className='bg-yellow-400 flex justify-between items-center px-4 py-3 rounded mt-4'>
-            <h2>Mayank</h2>
-            <h3>Make a Ui</h3>
-            <h5>status</h5>
-        </div>
 
-        <div className='bg-green-400 flex justify-between items-center px-4 py-3 rounded mt-4'>
-            <h2>Mayank</h2>
-            <h3>Make a Ui</h3>
-            <h5>status</h5>
-        </div>
+                    <div className='w-full bg-zinc-600 flex items-center py-3 font-bold mt-10'>
+                                <h2 className='w-1/5 px-4'>Employee Name</h2>
+                                <h2 className='w-1/5 px-4'>New Task</h2>
+                                <h2 className='w-1/5 px-4'>Active Task</h2>
+                                <h2 className='w-1/5 px-4'>Completed</h2>
+                                <h2 className='w-1/5 px-4'>Failed</h2>
+                    </div>
+    
 
-        <div className='bg-purple-400 flex justify-between items-center px-4 py-3 rounded mt-4'>
-            <h2>Mayank</h2>
-            <h3>Make a Ui</h3>
-            <h5>status</h5>
-        </div>
-    </div>
+            <div className='w-full h-40 bg-zinc-600 overflow-y-auto' id=''>
+
+                {data.map((item,index)=>(
+                    <div className='bg-zinc-500 flex justify-between items-center py-3 rounded mt-5' key={index}>
+                    <h2 className='w-1/5 px-4'>{item.name}</h2>
+                    <h2 className='w-1/5 px-4'>{item.taskCount.newTask}</h2>
+                    <h2 className='w-1/5 px-4'>{item.taskCount.active}</h2>
+                    <h2 className='w-1/5 px-4'>{item.taskCount.completed}</h2>
+                    <h2 className='w-1/5 px-4'>{item.taskCount.failed}</h2>
+                    
+                    </div>
+                ))}
+                   
+
+            </div>
+   
+</div>
   )
 }
 

@@ -1,10 +1,14 @@
 import React from 'react'
 
 const Createtask = () => {
-  return (
-    <div className='bg-zinc-600 flex items-start p-5 h-[50%] mt-8 rounded'>
 
-    <form className='w-full flex items-start justify-between gap-5 h-full'>
+    function handleSubmit(e){
+        e.preventDefault();
+    }
+  return (
+    <div className='bg-zinc-600 flex items-start p-5 h-96 mt-8 rounded'>
+
+    <form className='w-full flex items-start justify-between gap-5 h-full' onSubmit={(e)=>handleSubmit(e)}>
       
         <div className='w-[40%] h-full flex flex-col justify-between'>
         <div>
