@@ -14,7 +14,7 @@ const AllTask = ({data}) => {
                     </div>
     
 
-            <div className='w-full h-40 bg-zinc-600 overflow-y-auto' id=''>
+            <div className='w-full bg-zinc-600 overflow-y-auto' id=''>
 
                 {data.map((item,index)=>(
                     <div className='bg-zinc-500 flex justify-between items-center py-3 rounded mt-5' key={index}>

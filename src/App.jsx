@@ -46,7 +46,7 @@ function App() {
       localStorage.setItem('loggedinUser', JSON.stringify({role:"admin",data:AuthData.admin[0]}));   //in case of refresh 
    
     }
-    else if(AuthData){
+    else if(AuthData &&  AuthData?.employees.find((e)=> e.email === email && e.password === password)){
       const employeeData= AuthData?.employees.find((e)=> e.email === email && e.password === password);
       if(employeeData){
         setUser("employee");
