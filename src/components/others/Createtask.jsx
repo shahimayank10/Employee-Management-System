@@ -5,35 +5,35 @@ import React from 'react'
 
 const Createtask = ({data}) => {
 
-    
-
-    const [newtask, setNewTask] = useState({})
 
     const [taskTitle, setTaskTitle] = useState('')
     const [taskDescription, setTaskDecription] = useState('')
     const [taskDate, setTaskDate] = useState('')
     const [asignTo, setAsignTo] = useState('')
-    const [Category, setCategory] = useState('')
+    const [category, setCategory] = useState('')
 
-
+  
 
     function handleSubmit(e){
         e.preventDefault();
 
-        if(taskTitle=='' || taskDescription=='' || taskDate=='' || asignTo=='' || Category==''){
+        if(taskTitle=='' || taskDescription=='' || taskDate=='' || asignTo=='' || category==''){
             alert('Enter all details to Asign a Task');
             return;
         }
 
-        setNewTask({taskTitle,taskDescription,taskDate,asignTo,Category,active:false,completed:false,failed:false, newTask:true});
      
         data.forEach((element)=>{ 
             if((element.name).toLowerCase() === asignTo.toLowerCase() ){
-                element.tasks.push(newtask);
-                // console.log(data);
+                element.tasks.push({taskTitle,taskDescription,taskDate,asignTo,category,active:false,completed:false,failed:false, newTask:true});
+                
+                element.taskCount.newTask= element.taskCount.newTask+1;
+
+                localStorage.setItem('employees',JSON.stringify(data));
+
             }
 
-            localStorage.setItem('employees',JSON.stringify(data));
+        
         
     })
 
@@ -66,7 +66,7 @@ const Createtask = ({data}) => {
         
         <div>
         <h3 className='font-medium text-xl '>Category</h3>
-            <input type="text" value={Category} onChange={(e)=>setCategory(e.target.value)} placeholder='Design, Development, etc...' className='w-full border rounded p-2 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ' />
+            <input type="text" value={category} onChange={(e)=>setCategory(e.target.value)} placeholder='Design, Development, etc...' className='w-full border rounded p-2 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ' />
         </div>
 
         </div>
